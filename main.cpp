@@ -110,7 +110,7 @@ int main()
       ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << endl
               << "<h1>Bienvenue dans l'annuaire de tous les sites d'internet page "<< numeroPage <<" </h1></head>" << endl
               << "<nav><div class=\"hautbas\"> <ul><li><a href=\"#haut\">Haut</a></li><li><a href=\"#bas\">bas</a></li></ul></div></nav>" << endl
-              << "<body><a name=\"haut\"></a><p>Hébérgé sur un serveur de 2006 #norajdemonlagaj</p>" << endl;
+              << "<body><a name=\"haut\"></a>" << endl;
       cout << "OK]" << endl;
       cout << "creation des liens[";
       cout << "OK]" << endl;
