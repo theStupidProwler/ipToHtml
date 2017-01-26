@@ -109,8 +109,8 @@ int main()
               }
       ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << endl
               << "<h1>Bienvenue dans l'annuaire de tous les sites d'internet page "<< numeroPage <<" </h1></head>" << endl
-              << "<nav><div class=\"hautbas\"> <ul><li><a href=\"#haut\">Haut</a></li><li><a href=\"#bas\">bas</a></li></ul></div></nav>" << endl
-              << "<body><a name=\"haut\"></a>" << endl;
+              << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << endl
+              << "<body><a name=\"top\"></a>" << endl;
       cout << "OK]" << endl;
       cout << "creation des liens[";
       cout << "OK]" << endl;
@@ -147,8 +147,8 @@ int main()
         ecriture << "<a class=\"selecteur\" href=links" << (to_string(numeroPage + 1)) << ".html>suivant</a></footer>" << endl;
       }
 
-        ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl
-                << "</br></br><a name=\"bas\"></a></body></html>" << endl;
+        ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //very optional, delete it and set ur name ;)
+                << "</br></br><a name=\"bottom\"></a></body></html>" << endl;
         cout << "OK]" << endl;
 
 
@@ -157,7 +157,7 @@ int main()
 
       }
     cout << "Fin d'execution!" << endl;
-    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl
+    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //DELETE ITTTTTTTTT 
             << "</ul></body></html>" << endl;
     return 0;
   }
