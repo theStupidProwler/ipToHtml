@@ -21,7 +21,7 @@ switch (err) {
   break;
 }
 }
-int nombreDeLignes()
+double nombreDeLignes()
   {
 
 
@@ -115,17 +115,9 @@ int main()
       cout << "creation des liens[";
       cout << "OK]" << endl;
       compteARebour = 255;
-
+      access.seekg(((numeroPage * 255) - 1), ios::beg);
       while(compteARebour > 0)
         {
-          if(numeroPage == 1)
-            {
-              access.seekg(0, ios::beg);
-            }
-          else
-            {
-              access.seekg((numeroPage * 255), ios::beg);
-            }
           compteARebour --;
           access >> contenu;
           ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>"
