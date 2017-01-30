@@ -29,7 +29,7 @@ double nombreDeLignes()
     double fichiersAGenerer;
     int nombreLignes;
     cout << "Comptage de lignes en cours[";
-    ifstream access("ip.txt");
+    ifstream access("examples/raw.txt");
     if(!access){cout << "FAIL]";}
 
     for(nombreLignes = 0; getline(access, contenu); nombreLignes ++){}
@@ -41,7 +41,7 @@ double nombreDeLignes()
 }
 int main()
   {
-    int decompteLien;
+  //  int decompteLien;
     string contenu;
     int i = 0;
 
@@ -51,7 +51,7 @@ int main()
     numeroPage = 0;
     nombreDePages = (nombreDeLignes() / 255);
     ofstream ecriture;
-    ifstream access("raw.txt");
+    ifstream access("examples/raw.txt");
     cout << "Tentative d'ouvrir le flux de lecture[";
     if(!access)
       {
@@ -72,7 +72,7 @@ int main()
       }
       cout << "OK]" << endl;
       annuaire << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << endl
-              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << endl
+              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"assets/annuaire.css\">" << endl
               << "<title>Botnet Database</title>" << endl
               << "<h1>Botnet Database</h1></head>" << endl
               << "<body><p>Hébérgé sur un serveur de 2006 #norajdemonlagaj</p><ul>" << endl;
@@ -133,7 +133,7 @@ int main()
       }
       else
       {
-        
+
         ecriture << "<footer><a class=\"selecteur\" href=links" << (to_string(numeroPage - 1)) << ".html>Previous</a>" << endl;
         ecriture << "<a class=\"selecteur\" href=index.html>accueil</a>" << endl;
         ecriture << "<a class=\"selecteur\" href=links" << (to_string(numeroPage + 1)) << ".html>Following</a></footer>" << endl;
@@ -141,12 +141,12 @@ int main()
 
         ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //very optional, delete it and set ur name ;)
                 << "</br></br><a name=\"bottom\"></a></body></html>" << endl;
-    
+
       ecriture.close();
 
       }
     cout << "This is the end," << endl << "my only friend... the end" << endl;
-    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //DELETE ITTTTTTTTT 
+    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //DELETE ITTTTTTTTT
             << "</ul></body></html>" << endl;
     return 0;
   }
