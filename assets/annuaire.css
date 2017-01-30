@@ -40,7 +40,7 @@ footer
   }
 li, a
 {
-  list-style-type: lower-greek;
+  list-style-type:circle;
 text-decoration: none;
 color: ;
 text-align: center;
