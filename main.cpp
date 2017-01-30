@@ -29,7 +29,7 @@ double nombreDeLignes()
     double fichiersAGenerer;
     int nombreLignes;
     cout << "Comptage de lignes en cours[";
-    ifstream access("examples/raw.txt");
+    ifstream access("assets/raw.txt");
     if(!access){cout << "FAIL]";}
 
     for(nombreLignes = 0; getline(access, contenu); nombreLignes ++){}
