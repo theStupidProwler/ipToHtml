@@ -82,7 +82,7 @@ int main()
         numeroPage ++;
         resultat = "links" + to_string(numeroPage) + ".html";
         ecriture.open(resultat.c_str());
-        cout << "Tentative d'ouvrir le flux d'ecriture[";
+        cout << "Attempt to create a file stream[";
         if(!ecriture)
           {
 
@@ -91,7 +91,7 @@ int main()
           }
       annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>";
       cout << "OK]" << endl;
-      cout << "Creation page html basique[";
+      cout << "Website Creation[";
       ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << endl
               << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << endl;
               if(numeroPage == 1)
@@ -101,18 +101,18 @@ int main()
               }
               else
               {
-                cout << "Creation des boutons de naviguation[";
+                cout << "Making navigation button[";
                 ecriture << "<footer><a class=\"selecteurhaut\" href=links" << (to_string(numeroPage - 1)) << ".html>precedent</a>" << endl;
                 ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << endl;
                 ecriture << "<a class=\"selecteurhaut\" href=links" << (to_string(numeroPage + 1)) << ".html>suivant</a></footer><ul>" << endl;
 
               }
       ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << endl
-              << "<h1>Bienvenue dans l'annuaire de tous les sites d'internet page "<< numeroPage <<" </h1></head>" << endl
+              << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << endl
               << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << endl
               << "<body><a name=\"top\"></a>" << endl;
       cout << "OK]" << endl;
-      cout << "creation des liens[";
+      cout << "Links creation[";
       cout << "OK]" << endl;
       compteARebour = 255;
       access.seekg(((numeroPage * 255) - 1), ios::beg);
@@ -133,22 +133,19 @@ int main()
       }
       else
       {
-        cout << "Creation des boutons de naviguation[";
-        ecriture << "<footer><a class=\"selecteur\" href=links" << (to_string(numeroPage - 1)) << ".html>precedent</a>" << endl;
+        
+        ecriture << "<footer><a class=\"selecteur\" href=links" << (to_string(numeroPage - 1)) << ".html>Previous</a>" << endl;
         ecriture << "<a class=\"selecteur\" href=index.html>accueil</a>" << endl;
-        ecriture << "<a class=\"selecteur\" href=links" << (to_string(numeroPage + 1)) << ".html>suivant</a></footer>" << endl;
+        ecriture << "<a class=\"selecteur\" href=links" << (to_string(numeroPage + 1)) << ".html>Following</a></footer>" << endl;
       }
 
         ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //very optional, delete it and set ur name ;)
                 << "</br></br><a name=\"bottom\"></a></body></html>" << endl;
-        cout << "OK]" << endl;
-
-
-
+    
       ecriture.close();
 
       }
-    cout << "Fin d'execution!" << endl;
+    cout << "This is the end," << endl << "my only friend... the end" << endl;
     annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //DELETE ITTTTTTTTT 
             << "</ul></body></html>" << endl;
     return 0;
