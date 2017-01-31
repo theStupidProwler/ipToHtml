@@ -1,21 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-using namespace std;
-
-
-
-
+using std::ios;
 void error(int err)
 {
 switch (err) {
   case 403:
-  cout << "U must launch dat stupid piece of code in root" << endl;
+  std::cout << "U must launch dat stupid piece of code in root" << std::endl;
   break;
   case 404:
-  cout << "WOW DID U JUST TRYNA LAUNCH AN NON EXISTING FILE?\n"
+  std::cout << "WOW DID U JUST TRYNA LAUNCH AN NON EXISTING FILE?\n"
       << "u stupid fagot, relaunch dat code with a valid database in txt"
-      << " and the root rights(admin if ur a low-valuable winfag)" << endl;
+      << " and the root rights(admin if ur a low-valuable winfag)" << std::endl;
       break;
   case 0:
   break;
@@ -25,95 +21,95 @@ double nombreDeLignes()
   {
 
 
-    string contenu;
+    std::string contenu;
     double fichiersAGenerer;
     int nombreLignes;
-    cout << "Comptage de lignes en cours[";
-    ifstream access("assets/raw.txt");
-    if(!access){cout << "FAIL]";}
+    std::cout << "Comptage de lignes en cours[";
+    std::ifstream access("assets/raw.txt");
+    if(!access){std::cout << "FAIL]";}
 
-    for(nombreLignes = 0; getline(access, contenu); nombreLignes ++){}
-    cout << "OK]" << endl << "Nombre de lignes:" << nombreLignes << endl;
+    for(nombreLignes = 0; std::getline(access, contenu); nombreLignes ++){}
+    std::cout << "OK]" << std::endl << "Nombre de lignes:" << nombreLignes << std::endl;
     fichiersAGenerer = nombreLignes / 50;
-    cout << "Nombre de fichiers a generer:" << fichiersAGenerer << endl;
+    std::cout << "Nombre de fichiers a generer:" << fichiersAGenerer << std::endl;
 
     return nombreLignes;
 }
 int main()
   {
   //  int decompteLien;
-    string contenu;
+    std::string contenu;
     int i = 0;
 
     int compteARebour;
     int numeroPage, nombreDePages;
-    string resultat;
+    std::string resultat;
     numeroPage = 0;
     nombreDePages = (nombreDeLignes() / 255);
-    ofstream ecriture;
-    ifstream access("examples/raw.txt");
-    cout << "Tentative d'ouvrir le flux de lecture[";
+    std::ofstream ecriture;
+    std::ifstream access("examples/raw.txt");
+    std::cout << "Tentative d'ouvrir le flux de lecture[";
     if(!access)
       {
       //  int err;
-        cout << "FAIL]" << endl;
+        std::cout << "FAIL]" << std::endl;
         //err = 404;
         //error(err);
         return 403;
       }
-    cout << "OK]" << endl;
-    ofstream annuaire("index.html");
-    cout << "Tentative d'ouvrir le flux d'ecriture[";
+    std::cout << "OK]" << std::endl;
+    std::ofstream annuaire("index.html");
+    std::cout << "Tentative d'ouvrir le flux d'ecriture[";
     if(!annuaire)
       {
-        cout << "FAIL]" << endl;
+        std::cout << "FAIL]" << std::endl;
 
         return 403;
       }
-      cout << "OK]" << endl;
-      annuaire << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << endl
-              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"assets/annuaire.css\">" << endl
-              << "<title>Botnet Database</title>" << endl
-              << "<h1>Botnet Database</h1></head>" << endl
-              << "<body><p>Hébérgé sur un serveur de 2006 #norajdemonlagaj</p><ul>" << endl;
+      std::cout << "OK]" << std::endl;
+      annuaire << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
+              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"assets/annuaire.css\">" << std::endl
+              << "<title>Botnet Database</title>" << std::endl
+              << "<h1>Botnet Database</h1></head>" << std::endl
+              << "<body><p>Hébérgé sur un serveur de 2006 #norajdemonlagaj</p><ul>" << std::endl;
 
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
-        resultat = "links" + to_string(numeroPage) + ".html";
+        resultat = "links" + std::to_string(numeroPage) + ".html";
         ecriture.open(resultat.c_str());
-        cout << "Attempt to create a file stream[";
+        std::cout << "Attempt to create a file stream[";
         if(!ecriture)
           {
 
-            cout << "FAIL]" << endl;
+            std::cout << "FAIL]" << std::endl;
             return 403;
           }
       annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>";
-      cout << "OK]" << endl;
-      cout << "Website Creation[";
-      ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << endl
-              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << endl;
+      std::cout << "OK]" << std::endl;
+      std::cout << "Website Creation[";
+      ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
+              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << std::endl;
               if(numeroPage == 1)
               {
-                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << endl;
-                ecriture << "<a class=\"selecteurhaut\" href=links" << 2 << ".html>suivant</a><ul>" << endl;
+                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << std::endl;
+                ecriture << "<a class=\"selecteurhaut\" href=links" << 2 << ".html>suivant</a><ul>" << std::endl;
               }
               else
               {
-                cout << "Making navigation button[";
-                ecriture << "<footer><a class=\"selecteurhaut\" href=links" << (to_string(numeroPage - 1)) << ".html>precedent</a>" << endl;
-                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << endl;
-                ecriture << "<a class=\"selecteurhaut\" href=links" << (to_string(numeroPage + 1)) << ".html>suivant</a></footer><ul>" << endl;
+                std::cout << "Making navigation button[";
+                ecriture << "<footer><a class=\"selecteurhaut\" href=links" << (std::to_string(numeroPage - 1)) << ".html>precedent</a>" << std::endl;
+                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << std::endl;
+                ecriture << "<a class=\"selecteurhaut\" href=links" << (std::to_string(numeroPage + 1)) << ".html>suivant</a></footer><ul>" << std::endl;
 
               }
-      ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << endl
-              << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << endl
-              << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << endl
-              << "<body><a name=\"top\"></a>" << endl;
-      cout << "OK]" << endl;
-      cout << "Links creation[";
-      cout << "OK]" << endl;
+      ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << std::endl
+              << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << std::endl
+              << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << std::endl
+              << "<body><a name=\"top\"></a>" << std::endl;
+      std::cout << "OK]" << std::endl;
+      std::cout << "Links creation[";
+      std::cout << "OK]" << std::endl;
       compteARebour = 255;
       access.seekg(((numeroPage * 255) - 1), ios::beg);
       while(compteARebour > 0)
@@ -122,31 +118,31 @@ int main()
           access >> contenu;
           ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>"
                   << "#" << i <<":" << contenu
-                  << "</a></li>" << endl;
+                  << "</a></li>" << std::endl;
 
           i++;
         }
     ecriture << "</ul>";
     if(numeroPage == 1)
       {
-        ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << endl;
+        ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << std::endl;
       }
       else
       {
 
-        ecriture << "<footer><a class=\"selecteur\" href=links" << (to_string(numeroPage - 1)) << ".html>Previous</a>" << endl;
-        ecriture << "<a class=\"selecteur\" href=index.html>accueil</a>" << endl;
-        ecriture << "<a class=\"selecteur\" href=links" << (to_string(numeroPage + 1)) << ".html>Following</a></footer>" << endl;
+        ecriture << "<footer><a class=\"selecteur\" href=links" << (std::to_string(numeroPage - 1)) << ".html>Previous</a>" << std::endl;
+        ecriture << "<a class=\"selecteur\" href=index.html>accueil</a>" << std::endl;
+        ecriture << "<a class=\"selecteur\" href=links" << (std::to_string(numeroPage + 1)) << ".html>Following</a></footer>" << std::endl;
       }
 
-        ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //very optional, delete it and set ur name ;)
-                << "</br></br><a name=\"bottom\"></a></body></html>" << endl;
+        ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //very optional, delete it and set ur name ;)
+                << "</br></br><a name=\"bottom\"></a></body></html>" << std::endl;
 
       ecriture.close();
 
       }
-    cout << "This is the end," << endl << "my only friend... the end" << endl;
-    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << endl //DELETE ITTTTTTTTT
-            << "</ul></body></html>" << endl;
+    std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
+    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //DELETE ITTTTTTTTT
+            << "</ul></body></html>" << std::endl;
     return 0;
   }
