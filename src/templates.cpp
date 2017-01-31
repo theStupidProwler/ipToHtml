@@ -50,7 +50,7 @@ void ecrireDebutIndex()
             std::getline(templateFile, content);
             index << content << std::endl;
           }
-          return NULL;
+          return "defaut";
         }
     std::string ecrireFinPage(std::string nomFichier)
         {
@@ -68,5 +68,5 @@ void ecrireDebutIndex()
               std::getline(templateFile, content);
               index << content << std::endl;
             }
-          return NULL;
+          return "defaut";
         }
