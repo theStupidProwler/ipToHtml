@@ -74,12 +74,14 @@ int main()
         return 403;
       }
       std::cout << "OK]" << std::endl;
+      ecrireDebutIndex();
+      /*
       annuaire << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
               << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"assets/annuaire.css\">" << std::endl
               << "<title>Botnet Database</title>" << std::endl
               << "<h1>Botnet Database</h1></head>" << std::endl
               << "<body><p>Hébérgé sur un serveur de 2006 #norajdemonlagaj</p><ul>" << std::endl;
-
+*/
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
@@ -95,7 +97,8 @@ int main()
       annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>";
       std::cout << "OK]" << std::endl;
       std::cout << "Website Creation[";
-      ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
+      ecrireDebutPage(resultat);
+      /*ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
               << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << std::endl;
               if(numeroPage == 1)
               {
@@ -113,7 +116,7 @@ int main()
       ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << std::endl
               << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << std::endl
               << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << std::endl
-              << "<body><a name=\"top\"></a>" << std::endl;
+              << "<body><a name=\"top\"></a>" << std::endl;*/
       std::cout << "OK]" << std::endl;
       std::cout << "Links creation[";
       std::cout << "OK]" << std::endl;
@@ -129,7 +132,7 @@ int main()
 
           i++;
         }
-    ecriture << "</ul>";
+    /*ecriture << "</ul>";
     if(numeroPage == 1)
       {
         ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << std::endl;
@@ -144,12 +147,15 @@ int main()
 
         ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //very optional, delete it and set ur name ;)
                 << "</br></br><a name=\"bottom\"></a></body></html>" << std::endl;
-
+      */
+      ecrireFinPage(resultat);
       ecriture.close();
 
       }
     std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
-    annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //DELETE ITTTTTTTTT
+    /*annuaire << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //DELETE ITTTTTTTTT
             << "</ul></body></html>" << std::endl;
+    */
+    ecrireFinIndex();
     return 0;
   }
