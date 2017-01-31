@@ -18,7 +18,7 @@ void ecrireDebutIndex()
         std::getline(templateFile, content);
         index << content << std::endl;
       }
-
+    templateFile.close();
   }
   void ecrireFinIndex()
     {
@@ -35,6 +35,8 @@ void ecrireDebutIndex()
           std::getline(templateFile, content);
           index << content << std::endl;
         }
+        templateFile.close();
+        std::cout << "fermeture du fichier"<< std::endl;
     }
    std::string ecrireDebutPage(std::string nomFichier)
       {
@@ -47,8 +49,10 @@ void ecrireDebutIndex()
           {
             std::getline(templateFile, content);
             liens << content << std::endl;
-            std::cout << "Using Template";
+            std::cout << "Using Template" << std::endl;
           }
+          std::cout << "fermeture du fichier"<< std::endl;
+          templateFile.close();
           return "defaut";
         }
     std::string ecrireFinPage(std::string nomFichier)
@@ -67,5 +71,6 @@ void ecrireDebutIndex()
               std::getline(templateFile, content);
               index << content << std::endl;
             }
+          templateFile.close();
           return "defaut";
         }
