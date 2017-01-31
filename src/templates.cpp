@@ -41,14 +41,14 @@ void ecrireDebutIndex()
    std::string ecrireDebutPage(std::string nomFichier)
       {
         std::string content;
-        std::string balise = "fin";
-        std::ofstream index(nomFichier.c_str());
+        std::ofstream liens(nomFichier.c_str());
         std::ifstream templateFile("templates/pagesTemplate.html");
         std::getline(templateFile, content);
-        while(content != balise)
+        while(content != "fin")
           {
             std::getline(templateFile, content);
-            index << content << std::endl;
+            liens << content << std::endl;
+            std::cout << "Using Template";
           }
           return "defaut";
         }
