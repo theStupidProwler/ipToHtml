@@ -66,31 +66,29 @@ int main()
         std::cout << "OK]" << std::endl;
         std::cout << "Links creation[";
         std::cout << "OK]" << std::endl;
-        compteARebour = 255;
+        compteARebour = 0;
         access.seekg(((numeroPage * 255) - 1), ios::beg);
 
-     while(!(compteARebour == 0))
+     while(compteARebour != 255)
        {
+
           i++;
-          compteARebour --;
-          access >> contenu;
-          ecriture.seekp(std::ios_base::end);
-          ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>"
-                  << "#" << i <<":" << contenu << "</a></li>" << std::endl;
-          std::cout << compteARebour << std::endl;
+          compteARebour ++;
+          std::getline(access, contenu);
+          ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
+          std::cout << contenu << std::endl;
 
         }
 
           std::cout << "sortie du while malefique" << std::endl;
           std::cout << resultat << std::endl;
-          ecrireFinPage(resultat);
+          //ecrireFinPage(resultat);
           std::cout << "ecriture de la fin du fichier" << std::endl;
           ecriture.close();
           std::cout << "fermeture du flux" << std::endl;
         }
-    ecrireFinIndex();
+    //ecrireFinIndex();
     std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
-
 
     return 0;
   }

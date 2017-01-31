@@ -55,14 +55,16 @@ void ecrireDebutIndex()
     std::string ecrireFinPage(std::string nomFichier)
         {
           std::string content;
-          std::ofstream index(nomFichier);
+          std::ofstream fichier(nomFichier);
           std::ifstream templateFile("templates/pagesTemplate.html");
-          templateFile.seekg(10);
-          index.seekp(std::ios_base::end);
+          templateFile.seekg(7);
+          fichier.seekp(std::ios_base::end);
+          std::cout << std::to_string(fichier.tellp()) << std::endl << templateFile.tellg();
           while(std::getline(templateFile, content))
             {
               std::getline(templateFile, content);
-              index << content << std::endl;
+              fichier << content << "\n";
+              std::cout << content << std::endl;
             }
           templateFile.close();
           return "defaut";
