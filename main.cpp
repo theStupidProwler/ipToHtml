@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "src/templates.h"
 using std::ios;
+
 void error(int err)
 {
 switch (err) { // Inutile pour l'instant
