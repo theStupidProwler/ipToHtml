@@ -4,7 +4,7 @@
 using std::ios;
 void error(int err)
 {
-switch (err) {
+switch (err) { // Inutile pour l'instant
   case 403:
   std::cout << "U must launch dat stupid piece of code in root" << std::endl;
   break;
@@ -17,12 +17,10 @@ switch (err) {
   break;
 }
 }
-double nombreDeLignes()
+double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logique dit comme ca)
   {
-
-
     std::string contenu;
-    double fichiersAGenerer;
+    double fichiersAGenerer; // valeurs inutile qui meuble un peu le terminal parce que c'est sympa
     int nombreLignes;
     std::cout << "Comptage de lignes en cours[";
     std::ifstream access("assets/raw.txt");
@@ -52,6 +50,13 @@ int main()
     if(!access)
       {
       //  int err;
+
+      /*
+      Pour l'instant j'ai pas activé les codes d'erreurs
+      Parce que:
+        -Je comprends ce qui se passe quand y'a une erreur
+        -Personne d'autre que moi va se servir de se programme
+            */
         std::cout << "FAIL]" << std::endl;
         //err = 404;
         //error(err);
