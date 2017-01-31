@@ -43,7 +43,7 @@ void ecrireDebutIndex()
         std::string content;
         std::string balise = "fin";
         std::ofstream index(nomFichier.c_str());
-        std::ifstream templateFile("templates/indexTemplate.html");
+        std::ifstream templateFile("templates/pagesTemplate.html");
         std::getline(templateFile, content);
         while(content != balise)
           {
@@ -57,7 +57,7 @@ void ecrireDebutIndex()
           std::string content;
           std::string balise = "fin";
           std::ofstream index(nomFichier.c_str());
-          std::ifstream templateFile("templates/indexTemplate.html");
+          std::ifstream templateFile("templates/pagesTemplate.html");
           std::getline(templateFile, content);
           while(content != balise)
             {
