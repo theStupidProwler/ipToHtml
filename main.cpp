@@ -118,7 +118,7 @@ int main()
       {
         ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << std::endl;
       }
-      else
+    else
       {
 
         ecriture << "<footer><a class=\"selecteur\" href=links" << (std::to_string(numeroPage - 1)) << ".html>Previous</a>" << std::endl;
