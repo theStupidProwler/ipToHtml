@@ -59,7 +59,7 @@ int main()
         ecriture.open(resultat);
         ecriture.seekp(0, std::ios_base::end);
         std::cout << "Attempt to create a file stream[";
-        annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>";
+        annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
         std::cout << "OK]" << std::endl;
         std::cout << "Website Creation[";
         ecrireDebutPage(resultat);
@@ -69,35 +69,28 @@ int main()
         compteARebour = 255;
         access.seekg(((numeroPage * 255) - 1), ios::beg);
 
-      while(compteARebour != 0)
-        {
+     while(!(compteARebour == 0))
+       {
+          i++;
           compteARebour --;
           access >> contenu;
+          ecriture.seekp(std::ios_base::end);
           ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>"
                   << "#" << i <<":" << contenu << "</a></li>" << std::endl;
           std::cout << compteARebour << std::endl;
 
-          i++;
         }
 
-    std::cout << "sortie du while malefique";
-    if(numeroPage == 1)
-      {
-        ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << std::endl;
-      }
-    else
-      {
-
-        ecriture << "<footer><a class=\"selecteur\" href=links" << (std::to_string(numeroPage - 1)) << ".html>Previous</a>" << std::endl;
-        ecriture << "<a class=\"selecteur\" href=index.html>accueil</a>" << std::endl;
-        ecriture << "<a class=\"selecteur\" href=links" << (std::to_string(numeroPage + 1)) << ".html>Following</a></footer>" << std::endl;
-      }
-      ecrireFinPage(resultat);
-      ecriture.close();
-
-      }
+          std::cout << "sortie du while malefique" << std::endl;
+          std::cout << resultat << std::endl;
+          ecrireFinPage(resultat);
+          std::cout << "ecriture de la fin du fichier" << std::endl;
+          ecriture.close();
+          std::cout << "fermeture du flux" << std::endl;
+        }
+    ecrireFinIndex();
     std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
 
-    ecrireFinIndex();
+
     return 0;
   }
