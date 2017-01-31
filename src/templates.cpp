@@ -1,7 +1,7 @@
 #include "templates.h"
 #include <iostream>
 #include <fstream>
-using namespace std;
+
 void ecrireDebutIndex();
 void ecrireFinIndex();
 std::string ecrireDebutPage(std::string nomFichier);
@@ -17,7 +17,7 @@ void ecrireDebutIndex()
     while(content != balise)
       {
         std::getline(templateFile, content);
-        index << content << endl;
+        index << content << std::endl;
       }
 
   }
@@ -30,11 +30,43 @@ void ecrireDebutIndex()
       std::getline(templateFile, content);
       while(content != balise)
         {
-          // nothing to do 
+          // nothing to do
         }
       while(std::getline(templateFile, content))
         {
           std::getline(templateFile, content);
-          index << content << endl;
+          index << content << std::endl;
         }
     }
+   std::string ecrireDebutPage(std::string nomFichier)
+      {
+        std::string content;
+        std::string balise = "fin";
+        std::ofstream index(nomFichier.c_str());
+        std::ifstream templateFile("templates/indexTemplate.html");
+        std::getline(templateFile, content);
+        while(content != balise)
+          {
+            std::getline(templateFile, content);
+            index << content << std::endl;
+          }
+          return NULL;
+        }
+    std::string ecrireFinPage(std::string nomFichier)
+        {
+          std::string content;
+          std::string balise = "fin";
+          std::ofstream index(nomFichier.c_str());
+          std::ifstream templateFile("templates/indexTemplate.html");
+          std::getline(templateFile, content);
+          while(content != balise)
+            {
+              // nothing to do
+            }
+          while(std::getline(templateFile, content))
+            {
+              std::getline(templateFile, content);
+              index << content << std::endl;
+            }
+          return NULL;
+        }
