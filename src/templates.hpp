@@ -1,5 +1,5 @@
-#ifndef TEMPLATES_H_INCLUDED
-#define TEMPLATES_H_INCLUDED
+#ifndef TEMPLATES_HPP_INCLUDED
+#define TEMPLATES_HPP_INCLUDED
 #include <string>
 #include <iostream>
 void ecrireDebutIndex();

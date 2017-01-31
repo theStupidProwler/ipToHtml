@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "src/templates.h"
+#include "src/templates.hpp"
 using std::ios;
 
 void error(int err)
