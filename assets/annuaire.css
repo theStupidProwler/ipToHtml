@@ -1,15 +1,12 @@
-html
-{
+html{
 font-family:  serif;
 font-family: "Times New Roman", Times, serif;
 }
-h1
-{
+h1{
 text-align: center;
 font-size: 2.5em;
 }
-.selecteur
-{
+.selecteur{
 text-align: center;
 border-style: solid;
 text-decoration: none;
@@ -18,10 +15,8 @@ text-decoration: none;
   background-color: #b3ffd9;
   font-size: 1.5em;
   border-radius: 5px;
-
 }
-.selecteurhaut
-{
+.selecteurhaut{
   text-align: left;
   border-style: solid;
   text-decoration: none;
@@ -30,35 +25,27 @@ text-decoration: none;
     background-color: #b3ffd9;
     font-size: 1.5em;
     border-radius: 5px;
-
 }
-footer
-{
-
-    bottom: 0;
-    position: relative;
-  }
-li, a
-{
-  list-style-type:circle;
+footer{
+bottom: 0;
+position: relative;
+}
+li, a{
+list-style-type:circle;
 text-decoration: none;
 color: ;
 text-align: center;
 font-size: 1.1em;
 left: 12em;
 }
-li:visited
-{
-  color: red;
+li:visited{
+color: red;
 }
-nav
-{
-  position: fixed;
-  left: 0;
-  bottom: 50%;
-
+nav{
+position: fixed;
+left: 0;
+bottom: 50%;
 }
-nav.li
-{
-  list-style: none;
+nav.li{
+list-style: none;
 }
