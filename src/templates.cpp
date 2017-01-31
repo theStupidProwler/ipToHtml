@@ -10,11 +10,10 @@ std::string ecrireFinPage(std::string nomFichier);
 void ecrireDebutIndex()
   {
     std::string content;
-    std::string balise = "fin";
     std::ofstream index("index.html");
     std::ifstream templateFile("templates/indexTemplate.html");
     std::getline(templateFile, content);
-    while(content != balise)
+    while(content != "fin")
       {
         std::getline(templateFile, content);
         index << content << std::endl;
@@ -24,11 +23,10 @@ void ecrireDebutIndex()
   void ecrireFinIndex()
     {
       std::string content;
-      std::string balise = "fin";
       std::ofstream index("index.html");
       std::ifstream templateFile("templates/indexTemplate.html");
       std::getline(templateFile, content);
-      while(content != balise)
+      while(content != "fin")
         {
           // nothing to do
         }
@@ -40,6 +38,7 @@ void ecrireDebutIndex()
     }
    std::string ecrireDebutPage(std::string nomFichier)
       {
+        std::cout << "lancemement de la fonction" << std::endl;
         std::string content;
         std::ofstream liens(nomFichier.c_str());
         std::ifstream templateFile("templates/pagesTemplate.html");

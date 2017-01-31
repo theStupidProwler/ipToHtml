@@ -98,30 +98,11 @@ int main()
       std::cout << "OK]" << std::endl;
       std::cout << "Website Creation[";
       ecrireDebutPage(resultat);
-      ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
-              << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << std::endl;
-              if(numeroPage == 1)
-              {
-                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << std::endl;
-                ecriture << "<a class=\"selecteurhaut\" href=links" << 2 << ".html>suivant</a><ul>" << std::endl;
-              }
-              else
-              {
-                std::cout << "Making navigation button[";
-                ecriture << "<footer><a class=\"selecteurhaut\" href=links" << (std::to_string(numeroPage - 1)) << ".html>precedent</a>" << std::endl;
-                ecriture << "<a class=\"selecteurhaut\" href=index.html>accueil</a>" << std::endl;
-                ecriture << "<a class=\"selecteurhaut\" href=links" << (std::to_string(numeroPage + 1)) << ".html>suivant</a></footer><ul>" << std::endl;
-
-              }
-      /*criture << "<title>Botnet database #"<< numeroPage<<"</title>" << std::endl
-              << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << std::endl
-              << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << std::endl
-              << "<body><a name=\"top\"></a>" << std::endl;*/
       std::cout << "OK]" << std::endl;
       std::cout << "Links creation[";
       std::cout << "OK]" << std::endl;
       compteARebour = 255;
-      access.seekg(((numeroPage * 255) - 1), ios::beg);
+      access.seekg(((numeroPage * 255) -1), ios::beg);
       while(compteARebour > 0)
         {
           compteARebour --;
