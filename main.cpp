@@ -88,17 +88,17 @@ int main()
         resultat = "links" + std::to_string(numeroPage) + ".html";
         ecriture.open(resultat.c_str());
         std::cout << "Attempt to create a file stream[";
-        if(!ecriture)
+        /*if(!ecriture)
           {
 
             std::cout << "FAIL]" << std::endl;
             return 403;
-          }
+          }*/
       annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>";
       std::cout << "OK]" << std::endl;
       std::cout << "Website Creation[";
       ecrireDebutPage(resultat);
-      /*ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
+      ecriture << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" << std::endl
               << " <html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"annuaire.css\">" << std::endl;
               if(numeroPage == 1)
               {
@@ -113,7 +113,7 @@ int main()
                 ecriture << "<a class=\"selecteurhaut\" href=links" << (std::to_string(numeroPage + 1)) << ".html>suivant</a></footer><ul>" << std::endl;
 
               }
-      ecriture << "<title>Botnet database #"<< numeroPage<<"</title>" << std::endl
+      /*criture << "<title>Botnet database #"<< numeroPage<<"</title>" << std::endl
               << "<h1>Ip list #"<< numeroPage <<" </h1></head>" << std::endl
               << "<nav><div class=\"bottomtop\"> <ul><li><a href=\"#top\">top</a></li><li><a href=\"#bottom\">bottom</a></li></ul></div></nav>" << std::endl
               << "<body><a name=\"top\"></a>" << std::endl;*/
@@ -132,7 +132,7 @@ int main()
 
           i++;
         }
-    /*ecriture << "</ul>";
+    ecriture << "</ul>";
     if(numeroPage == 1)
       {
         ecriture << "<a href=links" << 2 << ".html>suivant</a></footer>" << std::endl;
@@ -147,7 +147,7 @@ int main()
 
         ecriture << "<p>Self-generated, with IpToHtml, by alexandre ouillon</p>" << std::endl //very optional, delete it and set ur name ;)
                 << "</br></br><a name=\"bottom\"></a></body></html>" << std::endl;
-      */
+
       ecrireFinPage(resultat);
       ecriture.close();
 
