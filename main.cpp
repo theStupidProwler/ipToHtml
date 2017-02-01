@@ -9,20 +9,15 @@ double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logi
     std::string contenu;
     double fichiersAGenerer; // valeurs inutile qui meuble un peu le terminal parce que c'est sympa
     int nombreLignes;
-    std::cout << "Comptage de lignes en cours[";
     std::ifstream access("assets/raw.txt");
-    if(!access){std::cout << "FAIL]";}
-
     for(nombreLignes = 0; std::getline(access, contenu); nombreLignes ++){}
-    std::cout << "OK]" << std::endl << "Nombre de lignes:" << nombreLignes << std::endl;
+    std::cout << "Nombre de lignes:" << nombreLignes << std::endl;
     fichiersAGenerer = nombreLignes / 50;
     std::cout << "Nombre de fichiers a generer:" << fichiersAGenerer << std::endl;
-
     return nombreLignes;
 }
 int main()
   {
-  //  int decompteLien;
     std::string contenu;
     int i = 0;
     int compteARebour;
@@ -31,26 +26,9 @@ int main()
     numeroPage = 0;
     nombreDePages = (nombreDeLignes() / 255);
     std::ofstream ecriture;
-    std::ifstream access("examples/raw.txt");
-    std::cout << "Tentative d'ouvrir le flux de lecture[";
-    if(!access)
-      {
-
-        std::cout << "FAIL]" << std::endl;
-
-        return 403;
-      }
-    std::cout << "OK]" << std::endl;
+    std::ifstream access("assets/raw.txt");
     std::ofstream annuaire("index.html");
-    std::cout << "Tentative d'ouvrir le flux d'ecriture[";
-    if(!annuaire)
-      {
-        std::cout << "FAIL]" << std::endl;
-
-        return 403;
-      }
-      std::cout << "OK]" << std::endl;
-      ecrireDebutIndex();
+    ecrireDebutIndex();
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
@@ -61,7 +39,6 @@ int main()
         ecrireDebutPage(resultat);
         compteARebour = 0;
         access.seekg(((numeroPage * 255) - 1), ios::beg);
-
         while(compteARebour != 255)
           {
             i++;
@@ -70,10 +47,8 @@ int main()
             ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
             std::cout << contenu << std::endl;
           }
-
-        std::cout << "sortie du while malefique" << std::endl;
         std::cout << resultat << std::endl;
-        //ecrireFinPage(resultat);
+        ecrireFinPage(resultat);
         std::cout << "ecriture de la fin du fichier" << std::endl;
         ecriture.close();
         std::cout << "fermeture du flux" << std::endl;
