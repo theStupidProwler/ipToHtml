@@ -63,7 +63,6 @@ std::string ecrireFinPage(std::string nomFichier)
       }
     while(std::getline(templateFile, content))
       {
-        std::getline(templateFile, content);
         fichier << content << "\n";
       }
         templateFile.close();
