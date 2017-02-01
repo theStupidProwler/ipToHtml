@@ -87,9 +87,9 @@ void ecrireDebutIndex()
              {
                std::string inf = "links" + (std::to_string(numeroPage - 1)) + ".html";
                std::string sup = "links" + (std::to_string(numeroPage + 1)) + ".html";
-               write << "<a href=\""<< inf <<"\"> Previous </a>"
+               write << "<div class=\"selecteur\"> <a href=\""<< inf <<"\"> Previous </a>"
                     << "<a href=\"index.html\">Home</a>"
-                    << "<a href=\""<< sup <<"\"> Next </a> " << std::endl;
+                    << "<a href=\""<< sup <<"\"> Next </a></div> " << std::endl;
              }
             return 1;
           }
