@@ -13,7 +13,7 @@ void ecrireDebutIndex()
     std::ofstream index("index.html");
     std::ifstream templateFile("templates/indexTemplate.html");
     std::getline(templateFile, content);
-    while(content != "fin")
+    while(content != "<!--fin-->")
       {
         std::getline(templateFile, content);
         index << content << std::endl;
@@ -25,8 +25,11 @@ void ecrireDebutIndex()
       std::string content;
       std::ofstream index("index.html", std::ios::app);
       std::ifstream templateFile("templates/indexTemplate.html");
-      templateFile.seekg(11);
-      index.seekp(std::ios_base::end);
+      templateFile.seekg(0);
+      while(content != "<!--fin-->")
+        {
+          getline(templateFile, content);
+        }
       while(std::getline(templateFile, content))
         {
           std::getline(templateFile, content);
@@ -42,7 +45,7 @@ void ecrireDebutIndex()
         std::ofstream liens(nomFichier);
         std::ifstream templateFile("templates/pagesTemplate.html");
         std::getline(templateFile, content);
-        while(content != "fin")
+        while(content != "<!--fin-->")
           {
             std::getline(templateFile, content);
             liens << content << std::endl;
@@ -57,9 +60,13 @@ void ecrireDebutIndex()
           std::string content;
           std::ofstream fichier(nomFichier, std::ios::app);
           std::ifstream templateFile("templates/pagesTemplate.html");
-          templateFile.seekg(10);
-          fichier.seekp(260);
           std::cout << std::to_string(fichier.tellp()) << std::endl << templateFile.tellg();
+
+          templateFile.seekg(0);
+          while(content != "<!--fin-->")
+            {
+              getline(templateFile, content);
+            }
           while(std::getline(templateFile, content))
             {
               std::getline(templateFile, content);
