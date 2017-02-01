@@ -27,13 +27,13 @@ int main()
     nombreDePages = (nombreDeLignes() / 255);
     std::ofstream ecriture;
     std::ifstream access("assets/raw.txt");
-    std::ofstream annuaire("index.html");
+    std::ofstream annuaire("index.html", std::ios::app);
     ecrireDebutIndex();
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
         resultat = "links" + std::to_string(numeroPage) + ".html";
-        ecriture.open(resultat);
+        ecriture.open(resultat, std::ios::app);
         ecriture.seekp(0, std::ios_base::end);
         annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
         ecrireDebutPage(resultat);
@@ -53,7 +53,7 @@ int main()
         ecriture.close();
         std::cout << "fermeture du flux" << std::endl;
         }
-    //ecrireFinIndex();
+    ecrireFinIndex();
     std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
 
     return 0;
