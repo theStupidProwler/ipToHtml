@@ -25,7 +25,7 @@ void ecrireDebutIndex()
       std::string content;
       std::ofstream index("index.html", std::ios::app);
       std::ifstream templateFile("templates/indexTemplate.html");
-      templateFile.seekg(10);
+      templateFile.seekg(11);
       index.seekp(std::ios_base::end);
       while(std::getline(templateFile, content))
         {
@@ -57,7 +57,7 @@ void ecrireDebutIndex()
           std::string content;
           std::ofstream fichier(nomFichier, std::ios::app);
           std::ifstream templateFile("templates/pagesTemplate.html");
-          templateFile.seekg(7);
+          templateFile.seekg(10);
           fichier.seekp(260);
           std::cout << std::to_string(fichier.tellp()) << std::endl << templateFile.tellg();
           while(std::getline(templateFile, content))
