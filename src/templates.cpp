@@ -36,11 +36,10 @@ void ecrireDebutIndex()
           index << content << std::endl;
         }
         templateFile.close();
-        std::cout << "fermeture du fichier"<< std::endl;
     }
    std::string ecrireDebutPage(std::string nomFichier)
       {
-        std::cout << "lancemement de la fonction" << std::endl;
+
         std::string content;
         std::ofstream liens(nomFichier);
         std::ifstream templateFile("templates/pagesTemplate.html");
@@ -49,9 +48,9 @@ void ecrireDebutIndex()
           {
             std::getline(templateFile, content);
             liens << content << std::endl;
-            std::cout << "Using Template" << std::endl;
+
           }
-          std::cout << "fermeture du fichier"<< std::endl;
+
           templateFile.close();
           return "defaut";
         }
@@ -60,7 +59,7 @@ void ecrireDebutIndex()
           std::string content;
           std::ofstream fichier(nomFichier, std::ios::app);
           std::ifstream templateFile("templates/pagesTemplate.html");
-          std::cout << std::to_string(fichier.tellp()) << std::endl << templateFile.tellg();
+
 
           templateFile.seekg(0);
           while(content != "<!--fin-->")
@@ -71,7 +70,7 @@ void ecrireDebutIndex()
             {
               std::getline(templateFile, content);
               fichier << content << "\n";
-              std::cout << content << std::endl;
+            
             }
           templateFile.close();
           return "defaut";

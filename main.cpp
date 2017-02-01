@@ -45,16 +45,11 @@ int main()
             compteARebour ++;
             std::getline(access, contenu);
             ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
-            std::cout << contenu << std::endl;
           }
         std::cout << resultat << std::endl;
         ecrireFinPage(resultat);
-        std::cout << "ecriture de la fin du fichier" << std::endl;
         ecriture.close();
-        std::cout << "fermeture du flux" << std::endl;
         }
     ecrireFinIndex();
-    std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
-
     return 0;
   }
