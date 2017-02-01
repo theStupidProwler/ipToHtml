@@ -25,7 +25,6 @@ int main()
   //  int decompteLien;
     std::string contenu;
     int i = 0;
-
     int compteARebour;
     int numeroPage, nombreDePages;
     std::string resultat;
@@ -58,34 +57,26 @@ int main()
         resultat = "links" + std::to_string(numeroPage) + ".html";
         ecriture.open(resultat);
         ecriture.seekp(0, std::ios_base::end);
-        std::cout << "Attempt to create a file stream[";
         annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
-        std::cout << "OK]" << std::endl;
-        std::cout << "Website Creation[";
         ecrireDebutPage(resultat);
-        std::cout << "OK]" << std::endl;
-        std::cout << "Links creation[";
-        std::cout << "OK]" << std::endl;
         compteARebour = 0;
         access.seekg(((numeroPage * 255) - 1), ios::beg);
 
-     while(compteARebour != 255)
-       {
+        while(compteARebour != 255)
+          {
+            i++;
+            compteARebour ++;
+            std::getline(access, contenu);
+            ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
+            std::cout << contenu << std::endl;
+          }
 
-          i++;
-          compteARebour ++;
-          std::getline(access, contenu);
-          ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
-          std::cout << contenu << std::endl;
-
-        }
-
-          std::cout << "sortie du while malefique" << std::endl;
-          std::cout << resultat << std::endl;
-          //ecrireFinPage(resultat);
-          std::cout << "ecriture de la fin du fichier" << std::endl;
-          ecriture.close();
-          std::cout << "fermeture du flux" << std::endl;
+        std::cout << "sortie du while malefique" << std::endl;
+        std::cout << resultat << std::endl;
+        //ecrireFinPage(resultat);
+        std::cout << "ecriture de la fin du fichier" << std::endl;
+        ecriture.close();
+        std::cout << "fermeture du flux" << std::endl;
         }
     //ecrireFinIndex();
     std::cout << "This is the end," << std::endl << "my only friend... the end" << std::endl;
