@@ -5,6 +5,7 @@ font-family: "Times New Roman", Times, serif;
 h1{
 text-align: center;
 font-size: 2.5em;
+color: #2855BE;
 }
 .selecteur{
 text-align: center;
@@ -30,16 +31,18 @@ footer{
 bottom: 0;
 position: relative;
 }
-li, a{
+li{
+border-radius: 1px;
 list-style-type:circle;
 text-decoration: none;
-color: ;
+color: black;
 text-align: center;
-font-size: 1.1em;
+font-size: auto;
 left: 12em;
 }
-li:visited{
+a:visited{
 color: red;
+
 }
 nav{
 position: fixed;
