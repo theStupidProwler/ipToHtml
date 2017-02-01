@@ -6,7 +6,7 @@ void ecrireDebutIndex();
 void ecrireFinIndex();
 std::string ecrireDebutPage(std::string nomFichier);
 std::string ecrireFinPage(std::string nomFichier);
-
+std::string boutonsNaviguation(std::string nomFichier);
 void ecrireDebutIndex()
   {
     std::string content;
@@ -70,8 +70,26 @@ void ecrireDebutIndex()
             {
               std::getline(templateFile, content);
               fichier << content << "\n";
-            
+
             }
           templateFile.close();
           return "defaut";
         }
+        int boutonsNaviguation(int numeroPage)
+          {
+            std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
+            std::ofstream write(nomFichier, std::ios::app);
+            if(nomFichier == "links1.html")
+             {
+               write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
+             }
+             else
+             {
+               std::string inf = "links" + (std::to_string(numeroPage - 1)) + ".html";
+               std::string sup = "links" + (std::to_string(numeroPage + 1)) + ".html";
+               write << "<a href=\""<< inf <<"\"> Previous </a>"
+                    << "<a href=\"index.html\">Home</a>"
+                    << "<a href=\""<< sup <<"\"> Next </a> " << std::endl;
+             }
+            return 1;
+          }
