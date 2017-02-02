@@ -1,42 +1,39 @@
-html{
+html
+{
 font-family:  serif;
 font-family: "Times New Roman", Times, serif;
 }
-head{
+head
+{
 border-radius: 1px;
 background-color: b8b8b8;
 border-bottom: grey;
 }
-h1{
+h1
+{
 text-align: center;
 font-size: 2.5em;
 color: #2855BE;
 }
-.selecteur{
+.selecteur
+{
 text-align: center;
 border-style: solid;
 text-decoration: none;
-  position: relative;
-  color: black;
-  background-color: #b3ffd9;
-  font-size: 1.5em;
-  border-radius: 5px;
+position: relative;
+color: black;
+background-color: #b3ffd9;
+font-size: 1.5em;
+border-radius: 5px;
 }
-.selecteurhaut{
-  text-align: left;
-  border-style: solid;
-  text-decoration: none;
-    position: relative;
-    color: b8b8b8;
-    background-color: #b3ffd9;
-    font-size: 1.5em;
-    border-radius: 5px;
-}
-footer{
+footer
+{
 bottom: 0;
 position: relative;
+
 }
-li{
+li
+{
 border-radius: 1px;
 list-style-type:circle;
 text-decoration: none;
@@ -45,15 +42,17 @@ text-align: center;
 font-size: auto;
 left: 12em;
 }
-a:visited{
+a:visited
+{
 color: red;
-
 }
-nav{
+nav
+{
 position: fixed;
 left: 0;
 bottom: 50%;
 }
-nav.li{
+nav.li
+{
 list-style: none;
 }

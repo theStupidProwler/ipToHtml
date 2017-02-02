@@ -11,7 +11,7 @@ std::string boutonsNaviguation(std::string nomFichier);
 void ecrireDebutIndex()
   {
     std::string content;
-    std::ofstream index("index.html"); 
+    std::ofstream index("index.html");
     std::ifstream templateFile("templates/indexTemplate.html");
     std::getline(templateFile, content);
     while(content != "<!--fin-->")
@@ -58,7 +58,7 @@ std::string ecrireFinPage(std::string nomFichier)
     std::ofstream fichier(nomFichier, std::ios::app);
     std::ifstream templateFile("templates/pagesTemplate.html");
     templateFile.seekg(0);
-    while(content != "<!--fin-->")
+    while(content != "<!--footer-->")
       {
         getline(templateFile, content);
       }
@@ -71,8 +71,19 @@ std::string ecrireFinPage(std::string nomFichier)
   }
 int boutonsNaviguation(int numeroPage)
   {
+    std::string content;
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
+    std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
+    while(content != "<!--fin-->")
+      {
+        getline(templateFile, content);
+      }
+    while(content != "<!--footer-->")
+      {
+        getline(templateFile, content);
+        write << content;
+      }
     if(nomFichier == "links1.html")
        {
          write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
