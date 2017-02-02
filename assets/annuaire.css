@@ -2,6 +2,9 @@ html{
 font-family:  serif;
 font-family: "Times New Roman", Times, serif;
 }
+head{
+background-color: b8b8b8; 
+}
 h1{
 text-align: center;
 font-size: 2.5em;
