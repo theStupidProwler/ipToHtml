@@ -3,7 +3,9 @@ font-family:  serif;
 font-family: "Times New Roman", Times, serif;
 }
 head{
-background-color: b8b8b8; 
+border-radius: 1px;
+background-color: b8b8b8;
+border-bottom: grey;
 }
 h1{
 text-align: center;
