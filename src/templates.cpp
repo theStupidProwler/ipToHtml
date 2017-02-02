@@ -7,10 +7,11 @@ void ecrireFinIndex();
 std::string ecrireDebutPage(std::string nomFichier);
 std::string ecrireFinPage(std::string nomFichier);
 std::string boutonsNaviguation(std::string nomFichier);
+
 void ecrireDebutIndex()
   {
     std::string content;
-    std::ofstream index("index.html");
+    std::ofstream index("index.html"); 
     std::ifstream templateFile("templates/indexTemplate.html");
     std::getline(templateFile, content);
     while(content != "<!--fin-->")
@@ -63,10 +64,10 @@ std::string ecrireFinPage(std::string nomFichier)
       }
     while(std::getline(templateFile, content))
       {
-        fichier << content << "\n";
+        fichier << content << std::endl;
       }
         templateFile.close();
-        return "defaut";
+        return "default";
   }
 int boutonsNaviguation(int numeroPage)
   {
