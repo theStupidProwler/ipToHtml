@@ -11,13 +11,14 @@ double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logi
     int nombreLignes;
     std::ifstream access("assets/raw.txt");
     for(nombreLignes = 0; std::getline(access, contenu); nombreLignes ++){}
-    std::cout << "Nombre de lignes:" << nombreLignes << std::endl;
+    std::cout << "Ip Numbers:" << nombreLignes << std::endl;
     fichiersAGenerer = nombreLignes / 50;
-    std::cout << "Nombre de fichiers a generer:" << fichiersAGenerer << std::endl;
+    std::cout << "Files to create:" << fichiersAGenerer << std::endl;
     return nombreLignes;
 }
 int main()
   {
+
     std::string contenu;
     int i = 0;
     int compteARebour;
@@ -29,6 +30,7 @@ int main()
     std::ifstream access("assets/raw.txt");
     std::ofstream annuaire("index.html", std::ios::app);
     ecrireDebutIndex();
+    std::cout << "Generation:";
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
@@ -51,5 +53,6 @@ int main()
         ecriture.close();
         }
     ecrireFinIndex();
+    std::cout << "[OK]" << std::endl;
     return 0;
   }
