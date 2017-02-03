@@ -7,12 +7,12 @@ using std::ios;
 double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logique dit comme ca)
   {
     std::string contenu;
-    double fichiersAGenerer; // valeurs inutile qui meuble un peu le terminal parce que c'est sympa
+    double fichiersAGenerer;
     int nombreLignes;
     std::ifstream access("assets/raw.txt");
     for(nombreLignes = 0; std::getline(access, contenu); nombreLignes ++){}
     std::cout << "Ip Numbers:" << nombreLignes << std::endl;
-    fichiersAGenerer = nombreLignes / 50;
+    fichiersAGenerer = nombreLignes / 255;
     std::cout << "Files to create:" << fichiersAGenerer << std::endl;
     return nombreLignes;
 }
