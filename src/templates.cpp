@@ -128,6 +128,7 @@ int h1Number(int numeroPage)
       {
         getline(templateFile, content);
       }
+      write << numeroPage;
     while(content != "<!--fin-->")
       {
         getline(templateFile, content);

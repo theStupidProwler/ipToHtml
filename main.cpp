@@ -16,6 +16,7 @@ double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logi
     std::cout << "Files to create:" << fichiersAGenerer << std::endl;
     return nombreLignes;
 }
+
 int main()
   {
 
