@@ -40,7 +40,7 @@ void ecrireFinIndex()
       }
       templateFile.close();
   }
-/*std::string ecrireDebutPage(std::string nomFichier)
+std::string ecrireDebutPage(std::string nomFichier)
   {
     std::string content;
     std::ofstream liens(nomFichier);
@@ -53,7 +53,7 @@ void ecrireFinIndex()
       }
       templateFile.close();
       return "defaut";
-  }*/
+  }
 std::string ecrireFinPage(std::string nomFichier)
   {
     std::string content;
@@ -106,24 +106,16 @@ int titleNumber(int numeroPage)
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
-    while(content != "<!--title-->")
+    while(content != "<!--titlenumber-->")
       {
         getline(templateFile, content);
+      }
+    while(content != "<!--h1number-->")
+      {
         getline(templateFile, content);
         write << content;
       }
-    if(nomFichier == "links1.html")
-       {
-         write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
-       }
-   else
-    {
-      std::string inf = "links" + (std::to_string(numeroPage - 1)) + ".html";
-      std::string sup = "links" + (std::to_string(numeroPage + 1)) + ".html";
-      write << "<div class=\"selecteur\"> <a href=\""<< inf <<"\"> Previous </a>"
-            << "<a href=\"index.html\">Home</a>"
-            << "<a href=\""<< sup <<"\"> Next </a></div> " << std::endl;
-    }
+
 return 1;
 }
 int h1Number(int numeroPage)
@@ -132,26 +124,15 @@ int h1Number(int numeroPage)
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
-    while(content != "<!--fin-->")
+    while(content != "<!--h1number-->")
       {
         getline(templateFile, content);
       }
-    while(content != "<!--footer-->")
+    while(content != "<!--fin-->")
       {
         getline(templateFile, content);
         write << content;
       }
-    if(nomFichier == "links1.html")
-       {
-         write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
-       }
-   else
-    {
-      std::string inf = "links" + (std::to_string(numeroPage - 1)) + ".html";
-      std::string sup = "links" + (std::to_string(numeroPage + 1)) + ".html";
-      write << "<div class=\"selecteur\"> <a href=\""<< inf <<"\"> Previous </a>"
-            << "<a href=\"index.html\">Home</a>"
-            << "<a href=\""<< sup <<"\"> Next </a></div> " << std::endl;
-    }
+
 return 1;
 }

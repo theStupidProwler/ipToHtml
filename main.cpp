@@ -39,6 +39,8 @@ int main()
         ecriture.seekp(0, std::ios_base::end);
         annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
         ecrireDebutPage(resultat);
+        titleNumber(numeroPage);
+        h1Number(numeroPage);
         compteARebour = 0;
         access.seekg(((numeroPage * 255) - 1), ios::beg);
         while(compteARebour != 255)
