@@ -7,4 +7,6 @@ void ecrireFinIndex();
 std::string ecrireDebutPage(std::string nomFichier);
 std::string ecrireFinPage(std::string nomFichier);
 int boutonsNaviguation(int numeroPage);
+int titleNumber(int numeroPage);
+int h1Number(int numeroPage);
 #endif
