@@ -4,9 +4,9 @@
 #include <iostream>
 void ecrireDebutIndex();
 void ecrireFinIndex();
-std::string ecrireDebutPage(std::string nomFichier);
-std::string ecrireFinPage(std::string nomFichier);
-int boutonsNaviguation(int numeroPage);
-int titleNumber(int numeroPage);
-int h1Number(int numeroPage);
+void ecrireDebutPage(std::string nomFichier);
+void ecrireFinPage(std::string nomFichier);
+void boutonsNaviguation(int numeroPage);
+void titleNumber(int numeroPage);
+void h1Number(int numeroPage);
 #endif

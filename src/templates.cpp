@@ -4,11 +4,11 @@
 
 void ecrireDebutIndex();
 void ecrireFinIndex();
-std::string ecrireDebutPage(std::string nomFichier);
-std::string ecrireFinPage(std::string nomFichier);
+void ecrireDebutPage(std::string nomFichier);
+void ecrireFinPage(std::string nomFichier);
 int boutonsNaviguation(std::string nomFichier);
-int titleNumber(int numeroPage);
-int h1Number(int numeroPage);
+void titleNumber(int numeroPage);
+void h1Number(int numeroPage);
 
 void ecrireDebutIndex()
   {
@@ -40,7 +40,7 @@ void ecrireFinIndex()
       }
       templateFile.close();
   }
-std::string ecrireDebutPage(std::string nomFichier)
+void ecrireDebutPage(std::string nomFichier)
   {
     std::string content;
     std::ofstream liens(nomFichier);
@@ -52,9 +52,8 @@ std::string ecrireDebutPage(std::string nomFichier)
         liens << content << std::endl;
       }
       templateFile.close();
-      return "defaut";
   }
-std::string ecrireFinPage(std::string nomFichier)
+void ecrireFinPage(std::string nomFichier)
   {
     std::string content;
     std::ofstream fichier(nomFichier, std::ios::app);
@@ -69,9 +68,9 @@ std::string ecrireFinPage(std::string nomFichier)
         fichier << content << std::endl;
       }
         templateFile.close();
-        return "default";
+
   }
-int boutonsNaviguation(int numeroPage)
+void boutonsNaviguation(int numeroPage)
   {
     std::string content;
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
@@ -98,9 +97,9 @@ int boutonsNaviguation(int numeroPage)
             << "<a href=\"index.html\">Home</a>"
             << "<a href=\""<< sup <<"\"> Next </a></div> " << std::endl;
     }
-return 1;
+
 }
-int titleNumber(int numeroPage)
+void titleNumber(int numeroPage)
   {
     std::string content;
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
@@ -115,10 +114,8 @@ int titleNumber(int numeroPage)
         getline(templateFile, content);
         write << content;
       }
-
-return 1;
 }
-int h1Number(int numeroPage)
+void h1Number(int numeroPage)
   {
     std::string content;
     std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
@@ -135,5 +132,4 @@ int h1Number(int numeroPage)
         write << content;
       }
 
-return 1;
 }
