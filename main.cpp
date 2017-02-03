@@ -46,7 +46,6 @@ int main()
             std::getline(access, contenu);
             ecriture << "</br><li><a target='_blank' href='http:/" << "/" << contenu << "'>" << "#" << i <<":" << contenu << "</a></li>" << std::endl;
           }
-        std::cout << resultat << std::endl;
         boutonsNaviguation(numeroPage);
         ecrireFinPage(resultat);
         ecriture.close();
