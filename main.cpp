@@ -4,6 +4,8 @@
 #include "src/templates.hpp"
 using std::ios;
 
+#define nombreDeLignesParPages = 255; // change this value if you wanna have less/more lines per page
+
 double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logique dit comme ca)
   {
     std::string contenu;
@@ -26,7 +28,7 @@ int main()
     int numeroPage, nombreDePages;
     std::string resultat;
     numeroPage = 0;
-    nombreDePages = (nombreDeLignes() / 255);
+    nombreDePages = (nombreDeLignes() / nombreDeLignesParPages);
     std::ofstream ecriture;
     std::ifstream access("assets/raw.txt");
     std::ofstream annuaire("index.html", std::ios::app);
@@ -43,8 +45,8 @@ int main()
         titleNumber(numeroPage);
         h1Number(numeroPage);
         compteARebour = 0;
-        access.seekg(((numeroPage * 255) - 1), ios::beg);
-        while(compteARebour != 255)
+        access.seekg(((numeroPage * nombreDeLignesParPages) - 1), ios::beg);
+        while(compteARebour != nombreDeLignesParPages)
           {
             i++;
             compteARebour ++;
