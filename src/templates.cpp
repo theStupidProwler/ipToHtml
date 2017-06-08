@@ -22,6 +22,7 @@ void ecrireDebutIndex()
         index << content << std::endl;
       }
     templateFile.close();
+
   }
 void ecrireFinIndex()
   {
@@ -104,6 +105,7 @@ void boutonsNaviguation(int numeroPage)
 }
 void titleNumber(int numeroPage)
   {
+
     std::string content;
     std::string nomFichier = "html/links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
@@ -112,8 +114,9 @@ void titleNumber(int numeroPage)
       {
         getline(templateFile, content);
       }
-    while(content != "<!--h1number-->")
+    while(content != "<!--h1number -->")
       {
+        std::cout << "oui" << std::endl;//debug/20
         getline(templateFile, content);
         write << content;
       }
@@ -124,7 +127,7 @@ void h1Number(int numeroPage)
     std::string nomFichier = "html/links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
-    while(content != "<!--h1number-->")
+    while(content != "<!--h1number -->")
       {
         getline(templateFile, content);
       }
