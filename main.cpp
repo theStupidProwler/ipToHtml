@@ -4,7 +4,7 @@
 #include "src/templates.hpp"
 using std::ios;
 
-#define nombreDeLignesParPages = 255; // change this value if you wanna have less/more lines per page
+int nombreDeLignesParPages = 255; // change this value if you wanna have less/more lines per page
 
 double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logique dit comme ca)
   {

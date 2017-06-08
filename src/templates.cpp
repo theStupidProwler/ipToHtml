@@ -29,6 +29,7 @@ void ecrireFinIndex()
     std::ofstream index("html/index.html", std::ios::app);
     std::ifstream templateFile("templates/indexTemplate.html");
     templateFile.seekg(0);
+
     while(content != "<!--fin-->")
       {
         getline(templateFile, content);
@@ -46,6 +47,7 @@ void ecrireDebutPage(std::string nomFichier)
     std::ofstream liens(nomFichier);
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::getline(templateFile, content);
+
     while(content != "<!--fin-->")
       {
         std::getline(templateFile, content);
@@ -59,6 +61,7 @@ void ecrireFinPage(std::string nomFichier)
     std::ofstream fichier(nomFichier, std::ios::app);
     std::ifstream templateFile("templates/pagesTemplate.html");
     templateFile.seekg(0);
+
     while(content != "<!--footer-->")
       {
         getline(templateFile, content);
@@ -73,7 +76,7 @@ void ecrireFinPage(std::string nomFichier)
 void boutonsNaviguation(int numeroPage)
   {
     std::string content;
-    std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
+    std::string nomFichier = "html/links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
     while(content != "<!--fin-->")
@@ -102,7 +105,7 @@ void boutonsNaviguation(int numeroPage)
 void titleNumber(int numeroPage)
   {
     std::string content;
-    std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
+    std::string nomFichier = "html/links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
     while(content != "<!--titlenumber-->")
@@ -118,7 +121,7 @@ void titleNumber(int numeroPage)
 void h1Number(int numeroPage)
   {
     std::string content;
-    std::string nomFichier = "links" + std::to_string(numeroPage) + ".html";
+    std::string nomFichier = "html/links" + std::to_string(numeroPage) + ".html";
     std::ifstream templateFile("templates/pagesTemplate.html");
     std::ofstream write(nomFichier, std::ios::app);
     while(content != "<!--h1number-->")
