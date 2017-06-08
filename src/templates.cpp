@@ -13,7 +13,7 @@ void h1Number(int numeroPage);
 void ecrireDebutIndex()
   {
     std::string content;
-    std::ofstream index("index.html");
+    std::ofstream index("html/index.html");
     std::ifstream templateFile("templates/indexTemplate.html");
     std::getline(templateFile, content);
     while(content != "<!--fin-->")
@@ -26,7 +26,7 @@ void ecrireDebutIndex()
 void ecrireFinIndex()
   {
     std::string content;
-    std::ofstream index("index.html", std::ios::app);
+    std::ofstream index("html/index.html", std::ios::app);
     std::ifstream templateFile("templates/indexTemplate.html");
     templateFile.seekg(0);
     while(content != "<!--fin-->")
@@ -85,7 +85,7 @@ void boutonsNaviguation(int numeroPage)
         getline(templateFile, content);
         write << content;
       }
-    if(nomFichier == "links1.html")
+    if(nomFichier == "html/links1.html")
        {
          write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
        }

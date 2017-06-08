@@ -31,13 +31,13 @@ int main()
     nombreDePages = (nombreDeLignes() / nombreDeLignesParPages);
     std::ofstream ecriture;
     std::ifstream access("assets/raw.txt");
-    std::ofstream annuaire("index.html", std::ios::app);
+    std::ofstream annuaire("html/index.html", std::ios::app);
     ecrireDebutIndex();
     std::cout << "Generation:";
     while(numeroPage != nombreDePages)
       {
         numeroPage ++;
-        resultat = "links" + std::to_string(numeroPage) + ".html";
+        resultat = "html/links" + std::to_string(numeroPage) + ".html";
         ecriture.open(resultat, std::ios::app);
         ecriture.seekp(0, std::ios_base::end);
         annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
