@@ -3,24 +3,28 @@ html
 font-family:  serif;
 font-family: "Times New Roman", Times, serif;
 }
+
 head
 {
 border-radius: 1px;
 background-color: b8b8b8;
 border-bottom: grey;
 }
+
 footer
 {
   border-radius: 1px;
   background-color: b8b8b8;
-  border-bottom: grey;  
+  border-bottom: grey;
 }
+
 h1
 {
 text-align: center;
 font-size: 2.5em;
 color: #2855BE;
 }
+
 .selecteur
 {
 text-align: center;
@@ -32,12 +36,13 @@ background-color: #b3ffd9;
 font-size: 1.5em;
 border-radius: 5px;
 }
+
 footer
 {
 bottom: 0;
 position: relative;
-
 }
+
 li
 {
 border-radius: 1px;
@@ -48,16 +53,19 @@ text-align: center;
 font-size: auto;
 left: 12em;
 }
+
 a:visited
 {
 color: red;
 }
+
 nav
 {
 position: fixed;
 left: 0;
 bottom: 50%;
 }
+
 nav.li
 {
 list-style: none;
