@@ -116,7 +116,7 @@ void titleNumber(int numeroPage)
       }
     while(content != "<!--h1number -->")
       {
-        std::cout << "oui" << std::endl;//debug/20
+
         getline(templateFile, content);
         write << content;
       }
