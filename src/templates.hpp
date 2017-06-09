@@ -16,6 +16,7 @@ ecrireDebutPage et ecrireFinPage servent a interpreter les templates et à les m
 */
 void ecrireFinPage(std::string nomFichier);
 
+/* Ecrire les boutons de naviguations*/
 void boutonsNaviguation(int numeroPage);
 
 void titleNumber(int numeroPage);
