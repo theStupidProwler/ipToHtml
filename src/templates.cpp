@@ -24,6 +24,7 @@ void ecrireDebutIndex()
     templateFile.close();
 
   }
+
 void ecrireFinIndex()
   {
     std::string content;
@@ -42,6 +43,7 @@ void ecrireFinIndex()
       }
       templateFile.close();
   }
+
 void ecrireDebutPage(std::string nomFichier)
   {
     std::string content;
@@ -56,6 +58,7 @@ void ecrireDebutPage(std::string nomFichier)
       }
       templateFile.close();
   }
+
 void ecrireFinPage(std::string nomFichier)
   {
     std::string content;
@@ -74,6 +77,7 @@ void ecrireFinPage(std::string nomFichier)
         templateFile.close();
 
   }
+
 void boutonsNaviguation(int numeroPage)
   {
     std::string content;
@@ -103,6 +107,7 @@ void boutonsNaviguation(int numeroPage)
     }
 
 }
+
 void titleNumber(int numeroPage)
   {
 
@@ -121,6 +126,7 @@ void titleNumber(int numeroPage)
         write << content;
       }
 }
+
 void h1Number(int numeroPage)
   {
     std::string content;
