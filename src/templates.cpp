@@ -97,12 +97,11 @@ void boutonsNaviguation(int numeroPage)
        {
          write << "<a href=\"index.html\">Home</a><a href=\"links2.html\"> Next </a> " << std::endl;
        }
-   else
+    else
     {
       std::string inf = "links" + (std::to_string(numeroPage - 1)) + ".html";
       std::string sup = "links" + (std::to_string(numeroPage + 1)) + ".html";
-      write << "<div class=\"selecteur\"> <a href=\""<< inf <<"\"> Previous </a>"
-            << "<a href=\"index.html\">Home</a>"
+      write << "<div class=\"selecteur\"> <a href=\""<< inf <<"\"> Previous </a>" << "<a href=\"index.html\">Home</a>"
             << "<a href=\""<< sup <<"\"> Next </a></div> " << std::endl;
     }
 
