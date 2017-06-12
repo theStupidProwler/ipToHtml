@@ -146,7 +146,7 @@ void h1Number(int numeroPage)
 }
 void copyCssStylesheet()
 {
-  std::string line;
-  std::string nomFichier ="assets/annuaire.css";
-
+  std::string lineContent;
+  std::ifstream Istylesheet("assets/annuaire.css");
+  std::ofstream Ostylesheet("html/style.css")
 }
