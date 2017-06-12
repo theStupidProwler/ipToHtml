@@ -144,3 +144,9 @@ void h1Number(int numeroPage)
       }
 
 }
+void copyCssStylesheet()
+{
+  std::string line;
+  std::string nomFichier ="assets/annuaire.css";
+
+}
