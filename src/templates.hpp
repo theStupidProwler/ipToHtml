@@ -22,5 +22,6 @@ void boutonsNaviguation(int numeroPage);
 void titleNumber(int numeroPage);
 
 void h1Number(int numeroPage);
+void copyCssStylesheet();
 
 #endif
