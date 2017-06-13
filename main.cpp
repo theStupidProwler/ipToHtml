@@ -13,19 +13,16 @@ double nombreDeLignes() //fonction qui compte le nombre de ligne (ca semble logi
     int nombreLignes;
     std::ifstream access("assets/raw.txt");
     for(nombreLignes = 0; std::getline(access, contenu); nombreLignes ++){}
-    std::cout << "Ip Numbers:" << nombreLignes << std::endl;
     fichiersAGenerer = nombreLignes / linesPerPage;
-    std::cout << "Files to create:" << fichiersAGenerer << std::endl;
+    std::cout << "Ip Numbers:\n" << nombreLignes "\nFiles to create:\n" << fichiersAGenerer;
     return nombreLignes;
 }
 
 int main()
   {
-    std::string contenu;
+    std::string contenu,resultat;
     int i = 0;
-    int compteARebour;
-    int numeroPage, nombreDePages;
-    std::string resultat;
+    int compteARebour, numeroPage, nombreDePages;
     numeroPage = 0;
     nombreDePages = (nombreDeLignes() / linesPerPage);
     std::ofstream ecriture;
@@ -41,9 +38,7 @@ int main()
         ecriture.seekp(0, std::ios_base::end);
         annuaire << "<li><a href=\"links" << numeroPage << ".html\">" << numeroPage << "</a></li>" << std::endl;
         ecrireDebutPage(resultat);
-
         titleNumber(numeroPage);
-
         h1Number(numeroPage);
         compteARebour = 0;
         access.seekg(((numeroPage * linesPerPage) - 1), ios::beg);
