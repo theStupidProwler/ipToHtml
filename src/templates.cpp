@@ -144,3 +144,14 @@ void h1Number(int numeroPage)
       }
 
 }
+void copyCssStylesheet()
+{
+  std::string lineContent;
+  std::ifstream Istylesheet("assets/annuaire.css");
+  std::ofstream Ostylesheet("html/style.css");
+  while(lineContent)
+   {
+     Ostylesheet << lineContent;
+     getline(Istylesheet, lineContent);
+   }
+}
